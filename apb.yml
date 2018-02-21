@@ -1,0 +1,27 @@
+version: 1.0
+name: blank-vm-apb
+description: APB for managing Virtual Machine from scratch
+bindable: False
+async: optional
+metadata:
+  displayName: Blank VM (APB)
+  imageUrl: https://cdn.pbrd.co/images/H5Gutd7.png
+plans:
+  - name: default
+    description: Default deployment plan for blank-vm-apb
+    free: True
+    metadata: {}
+    parameters:
+      - title: Openshift Admin User
+        name: admin_user
+        type: string
+        required: true
+      - title: Openshift Admin Password
+        name: admin_password
+        type: string
+        required: true
+        display_type: password
+      - name: vmname
+        title: VM Name
+        type: string
+        default: myvm
