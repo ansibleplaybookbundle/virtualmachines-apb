@@ -1,5 +1,5 @@
 version: 1.0
-name: blank-vm-apb
+name: virtualmachine-apb
 description: APB for managing Virtual Machine
 bindable: False
 async: optional

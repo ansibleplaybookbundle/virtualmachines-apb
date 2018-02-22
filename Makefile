@@ -1,6 +1,6 @@
 DOCKERHOST = docker.io
-DOCKERORG = blank-vm-apb
-IMAGENAME = blank-vm-apb
+DOCKERORG = virtualmachine-apb
+IMAGENAME = virtualmachine-apb
 TAG = latest
 USER=$(shell id -u)
 PWD=$(shell pwd)
