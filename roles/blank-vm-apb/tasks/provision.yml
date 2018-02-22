@@ -1,14 +1,22 @@
 ---
-- name: Login As Super User ({{ admin_user }})
+- name: Login as "{{ admin_user }}" user
   command: "oc login -u {{ admin_user }} -p {{ admin_password }}"
+  when: cluster=="openshift"
 
-- name: Changing namespace to {{ namespace }}
+- name: Change project to {{ namespace }}
   command: "oc project {{ namespace }}"
 
-- name: Rendering VM Yaml ({{ vmname }})
+- name: Render Custom VM
+  copy:
+    content: "{{ custom_yaml }}"
+    dest:  /tmp/vm.yaml
+  when: _apb_plan_id == 'default'
+
+- name: Render Linux VM {{ vmname }} with {{ vmmemory }}M of memory
   template:
-    src: vm-ephemeral.yml.j2
+    src: vm-linux.yml.j2
     dest: /tmp/vm.yaml
+  when: _apb_plan_id == 'linux'
 
 - name: Create Virtual Machine
-  command: "oc create -f /tmp/vm.yaml"
+  command: "oc apply -f /tmp/vm.yaml"

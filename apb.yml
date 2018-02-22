@@ -1,27 +1,61 @@
 version: 1.0
 name: blank-vm-apb
-description: APB for managing Virtual Machine from scratch
+description: APB for managing Virtual Machine
 bindable: False
 async: optional
 metadata:
-  displayName: Blank VM (APB)
+  displayName: Virtual Machine (APB) 1
   imageUrl: https://cdn.pbrd.co/images/H5Gutd7.png
 plans:
   - name: default
-    description: Default deployment plan for blank-vm-apb
+    description: Virtual machine created from custom YAML
     free: True
-    metadata: {}
+    metadata:
+      displayName: Custom YAML
+      longDescription: Virtual machine created from custom YAML
     parameters:
-      - title: Openshift Admin User
-        name: admin_user
+      - name: admin_user
+        title: Openshift Admin User
         type: string
         required: true
-      - title: Openshift Admin Password
-        name: admin_password
+      - name: admin_password
+        title: Openshift Admin Password
         type: string
         required: true
-        display_type: password
+      - name: custom_yaml
+        title: Custom configuration (YAML)
+        type: string
+        display_type: textarea
+        required: true
+
+  - name: linux
+    description: Linux Virtual Machine Deployment
+    free: True
+    metadata:
+      displayName: Linux Virtual Machine
+      longDescription: Virtual machine with pre-installed Linux
+    parameters:
+      - name: admin_user
+        title: Openshift Admin User
+        type: string
+        required: true
+      - name: admin_password
+        title: Openshift Admin Password
+        type: string
+        required: true
       - name: vmname
-        title: VM Name
+        title: Name
         type: string
+        display_type: text
+        required: true
         default: myvm
+      - name: vmmemory
+        title: Memory (in MiB)
+        type: number
+        required: true
+        default: 64
+      - name: vmdiskimage
+        title: Disk Image
+        type: string
+        required: true
+        default: kubevirt/fedora-cloud-registry-disk-demo:latest

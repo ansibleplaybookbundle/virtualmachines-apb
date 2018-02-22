@@ -9,4 +9,4 @@
   - role: blank-vm-apb
   vars:
     action: provision
-    cluster: kubernetes
+    cluster: openshift
