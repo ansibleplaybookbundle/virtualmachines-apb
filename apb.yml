@@ -48,14 +48,15 @@ plans:
         type: string
         display_type: text
         required: true
-        default: myvm
       - name: vmmemory
         title: Memory (in MiB)
-        type: number
+        type: enum
         required: true
+        enum: [32, 64, 512, 1024, 2048]
         default: 64
       - name: vmdiskimage
+        default: 'fedora-cloud'
         title: Disk Image
-        type: string
-        required: true
-        default: kubevirt/fedora-cloud-registry-disk-demo:latest
+        type: enum
+        enum: ['alpine', 'cirros', 'fedora-cloud']
+        display_type: select
