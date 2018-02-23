@@ -20,7 +20,8 @@ plans:
         required: true
       - name: admin_password
         title: Openshift Admin Password
-        type: password
+        type: string
+        display_type: password
         required: true
       - name: custom_yaml
         title: Custom configuration (YAML)
@@ -41,8 +42,9 @@ plans:
         required: true
       - name: admin_password
         title: Openshift Admin Password
-        type: password
+        type: string
         required: true
+        display_type: password
       - name: vmname
         title: Name
         type: string
@@ -56,6 +58,7 @@ plans:
         default: 64
       - name: vmdiskimage
         title: Disk Image
-        type: string
+        type: enum
         required: true
-        default: kubevirt/fedora-cloud-registry-disk-demo:latest
+        default: 'fedora-cloud'
+        enum: ['alpine', 'fedora-cloud', 'cirros']
