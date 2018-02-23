@@ -4,7 +4,7 @@ description: APB for managing Virtual Machine
 bindable: False
 async: optional
 metadata:
-  displayName: Virtual Machine (APB) 1
+  displayName: Virtual Machine (APB)
   imageUrl: https://cdn.pbrd.co/images/H5Gutd7.png
 plans:
   - name: default
@@ -20,7 +20,7 @@ plans:
         required: true
       - name: admin_password
         title: Openshift Admin Password
-        type: string
+        type: password
         required: true
       - name: custom_yaml
         title: Custom configuration (YAML)
@@ -41,7 +41,7 @@ plans:
         required: true
       - name: admin_password
         title: Openshift Admin Password
-        type: string
+        type: password
         required: true
       - name: vmname
         title: Name
