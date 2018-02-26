@@ -1,0 +1,15 @@
+# Produces /tmp/vm.yaml based on selected plan and entered parameters
+---
+- name: Generate Custom VM
+  copy:
+    content: "{{ custom_yaml }}"
+    dest:  /tmp/vm.yaml
+  when: _apb_plan_id == 'default'
+
+# TODO: fetch template from API
+# TODO: Proper Linux and Windows templates are not yet ready
+- name: Generate Linux VM {{ vmname }} with {{ vmmemory }}M of memory
+  template:
+    src: vm-linux.yml.j2
+    dest: /tmp/vm.yaml
+  when: _apb_plan_id == 'linux'
