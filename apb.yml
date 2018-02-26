@@ -14,14 +14,6 @@ plans:
       displayName: Custom YAML
       longDescription: Virtual machine created from custom YAML
     parameters:
-      - name: admin_user
-        title: Openshift Admin User
-        type: string
-        required: true
-      - name: admin_password
-        title: Openshift Admin Password
-        type: password
-        required: true
       - name: custom_yaml
         title: Custom configuration (YAML)
         type: string
@@ -35,14 +27,6 @@ plans:
       displayName: Linux Virtual Machine
       longDescription: Virtual machine with pre-installed Linux
     parameters:
-      - name: admin_user
-        title: Openshift Admin User
-        type: string
-        required: true
-      - name: admin_password
-        title: Openshift Admin Password
-        type: password
-        required: true
       - name: vmname
         title: Name
         type: string
