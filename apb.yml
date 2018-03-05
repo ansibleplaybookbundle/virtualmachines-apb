@@ -3,6 +3,8 @@ name: virtualmachine-apb
 description: APB for managing Virtual Machine
 bindable: False
 async: optional
+tags:
+  - virtualization
 metadata:
   displayName: Virtual Machine (APB)
   imageUrl: https://cdn.pbrd.co/images/H5Gutd7.png
