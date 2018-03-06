@@ -9,4 +9,4 @@
   - role: virtualmachine-apb
   vars:
     action: deprovision
-    cluster: kubernetes
+    cluster: openshift
