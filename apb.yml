@@ -4,7 +4,7 @@ description: APB for managing Virtual Machine defined from scratch (custom yaml)
 bindable: False
 async: optional
 tags:
-  - virtualization
+  - virtualmachine
 metadata:
   displayName: Blank Virtual Machine (APB)
   imageUrl: https://cdn.pbrd.co/images/H5Gutd7.png
