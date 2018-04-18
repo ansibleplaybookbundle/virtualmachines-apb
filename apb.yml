@@ -1,12 +1,12 @@
 version: 1.0
 name: blankvm-apb
-description: APB for managing Virtual Machine defined from scratch (custom yaml)
+description: Service to define a Virtual Machine from scratch (custom yaml)
 bindable: False
 async: optional
 tags:
   - virtualmachine
 metadata:
-  displayName: Blank Virtual Machine (APB)
+  displayName: Blank Virtual Machine
   imageUrl: https://cdn.pbrd.co/images/H5Gutd7.png
 plans:
   - name: default
